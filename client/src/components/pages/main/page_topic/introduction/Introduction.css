@@ -1,0 +1,6 @@
+.introduction-page-container{
+    height: calc(100vh - var(--navbar_height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

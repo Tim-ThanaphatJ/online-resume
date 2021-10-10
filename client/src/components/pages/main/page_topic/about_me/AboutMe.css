@@ -1,0 +1,5 @@
+.aboutme-page-container{
+    height: calc(100vh - var(--navbar_height));
+
+    background-color: aqua;
+}
