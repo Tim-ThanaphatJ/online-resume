@@ -7,6 +7,9 @@ import * as FiIcon from "react-icons/fi";
 import * as CgIcon from "react-icons/cg";
 import * as AiIcon from "react-icons/ai";
 
+// Logo effect
+// import * as VFX from "react-vfx";
+
 // CSS
 import "./Navbar.css";
 
@@ -33,10 +36,15 @@ export const Navbar = () => {
 
   // Render Navbar Logo
   const renderNavLogo = () => {
+    // const imgSrc = "/assets/images/logo/logo.png";
+
     return (
       <React.Fragment>
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          Hi
+          {/* <VFX.VFXProvider>
+            <VFX.VFXImg src={imgSrc} shader="glitch" />
+          </VFX.VFXProvider> */}
+          HI
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <span>
@@ -60,14 +68,15 @@ export const Navbar = () => {
             {LiNavbarData.map((item, index) => {
               return (
                 <li key={index} className={`nav-item`}>
-                  
                   <a
                     href={item.linkto}
                     className="nav-links"
                     onClick={closeMobileMenu}
                   >
-                    {item.name === "Home" && <AiIcon.AiFillHome></AiIcon.AiFillHome> }
-                    {'\u00A0'}
+                    {item.name === "Home" && (
+                      <AiIcon.AiFillHome></AiIcon.AiFillHome>
+                    )}
+                    {"\u00A0"}
                     {item.name}
                   </a>
                 </li>

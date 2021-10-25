@@ -1,5 +1,5 @@
 // React
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // CSS
 import "./IntroductionCard.css";
@@ -9,25 +9,34 @@ import Typist from "react-typist";
 import Typed from "react-typed";
 
 // Components
-import { Button } from "../../button/Button";
+import { Button } from "../../components/button/Button";
 
 // React Icon
 import * as FaIcons from "react-icons/fa";
 
+// Descpition Data
+import { IntroductionData } from "../../components/data/introduction/IntroductionData";
+
+import PictToPix from "./pict_to_pix/PictToPix";
+
 // Speed Interval Typist
 const nameTypistSpeedInterval = 60;
-const descriptionTypistSpeedInterval = 30;
+const descriptionTypistSpeedInterval = 10;
 const buttonTypistSpeedInterval = 80;
 
 export const IntroductionCard = () => {
   const [typingDoneFirst, setTypingDoneFirst] = useState(false);
   const [typingDoneSecond, setTypingDoneSecond] = useState(false);
 
+  useEffect(() => {});
+
   return (
     <React.Fragment>
       <div className="intro-glass-container">
         <div className="my-img-container">
-          {/* <img src="/assets/images/introduction/14850541268639.jpg" alt="" /> */}
+          <PictToPix></PictToPix>
+          {/* <canvas id="canvas"></canvas> */}
+          {/* <img src="/assets/images/introduction/my-intro.png" alt="" /> */}
         </div>
 
         <div className="my-description-container">
@@ -36,9 +45,9 @@ export const IntroductionCard = () => {
             avgTypingDelay={nameTypistSpeedInterval}
             onTypingDone={() => setTypingDoneFirst(true)}
           >
-            <h3 id="greeting">Hi, my name is</h3>
+            {IntroductionData.greeting}
             <br />
-            <h1 id="my-name">" Tim Thanaphat "</h1>
+            {IntroductionData.name}
             <br />
           </Typist>
 
@@ -49,11 +58,15 @@ export const IntroductionCard = () => {
               onTypingDone={() => setTypingDoneSecond(true)}
             >
               <span id="description">
-                <span className="description-capital">T</span>im is a passionate{" "}
-                <span className="skill-color">P</span>roduct management,{" "}
-                <span className="skill-color">E</span>ntrepreneur, and{" "}
-                <span className="skill-color">V</span>isual story teller focused
-                on human-centric design and building beautiful products
+                {IntroductionData.descriptions.map((data, index) => {
+                  if (data.cName)
+                    return (
+                      <span key={index} className={data.cName}>{data.description}</span>
+                    );
+                  else {
+                    return <span key={index}>{data.description}</span>;
+                  }
+                })}
               </span>
             </Typist>
           )}
@@ -62,7 +75,7 @@ export const IntroductionCard = () => {
               typingDoneSecond ? "intro-underly active" : "intro-underly"
             }
           ></div>
-          <br />
+          
           {typingDoneSecond ? (
             <Button
               className="btns"
@@ -71,7 +84,7 @@ export const IntroductionCard = () => {
               onClick={console.log("hey")}
             >
               <Typed
-                strings={["GET STARTED "]}
+                strings={[" ABOUT-ME "]}
                 typeSpeed={buttonTypistSpeedInterval}
                 backSpeed={buttonTypistSpeedInterval}
                 loop

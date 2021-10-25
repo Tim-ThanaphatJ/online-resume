@@ -11,7 +11,7 @@ const Main = () => {
   return (
     <React.Fragment>
       <Introduction></Introduction> 
-      <AboutMe></AboutMe>
+      <AboutMe ></AboutMe>
     </React.Fragment>
   );
 };

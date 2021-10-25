@@ -1,5 +1,7 @@
 .aboutme-page-container{
     height: calc(100vh - var(--navbar_height));
-
-    background-color: aqua;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    background-color: white;
 }

@@ -2,6 +2,10 @@
   --my_pic_container_width: 40%;
 }
 
+.my-description-container h1 {
+  margin-bottom: 10px;
+}
+
 .intro-glass-container {
   height: 70%;
   width: 100%;
@@ -14,9 +18,9 @@
 .intro-glass-container .my-img-container {
   width: var(--my_pic_container_width);
   height: 100%;
-  margin-left: 10%;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .intro-glass-container .my-img-container img {
@@ -26,7 +30,6 @@
   -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  /* box-shadow: 0 0 8px 8px white inset; */
 }
 
 .intro-glass-container .my-description-container {
@@ -40,16 +43,22 @@
 }
 
 #greeting {
-  font-size: 16px;
+  font-size: var(--intro_greeting_fontsize_fullwidth);
 }
 #my-name {
-  font-size: 70px;
+  text-align: center;
+  font-size: var(--intro_myname_fontsize_fullwidth);
 }
 #description {
-  font-size: 20px;
+  font-size: var(--intro_description_fontsize_fullwidth);
+}
+#description span {
+  font-size: var(--intro_description_fontsize_fullwidth);
 }
 .description-capital {
-  font-weight: bold;
+  font-size: 1.6em !important;
+  /* font-weight: bold; */
+  color: rgb(57, 175, 190);
 }
 .skill-color {
   color: rgb(57, 175, 190);
@@ -59,6 +68,7 @@
 .intro-underly {
   margin-left: 30%;
   margin-top: 20px;
+  margin-bottom: 20px;
   height: 1px;
   border-bottom: 1px solid black;
   width: 0;
@@ -68,12 +78,24 @@
   width: 70%;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1180px) {
+  .intro-glass-container > .my-img-container {
+    display: none;
+  }
+  .intro-glass-container > .my-description-container {
+    width: 80%;
+  }
+  .intro-glass-container > .my-description-container #greeting {
+    font-size: var(--intro_greeting_fontsize_1180);
+  }
   .intro-glass-container > .my-description-container #my-name {
-    font-size: 48px;
+    font-size: var(--intro_myname_fontsize_1180);
+  }
+  .intro-glass-container > .my-description-container #description span{
+    font-size: var(--intro_description_fontsize_1180);
   }
   .intro-glass-container > .my-description-container #description {
-    font-size: 19px;
+    font-size: var(--intro_description_fontsize_1180);
   }
 }
 
@@ -81,13 +103,19 @@
   .intro-glass-container > .my-img-container {
     display: none;
   }
-  .intro-glass-container > .my-description-container{
-    padding: 0;
+  .intro-glass-container > .my-description-container {
+    width: 80%;
+  }
+  .intro-glass-container > .my-description-container #greeting {
+    font-size: var(--intro_greeting_fontsize_768);
   }
   .intro-glass-container > .my-description-container #my-name {
-    font-size: 35px;
+    font-size: var(--intro_myname_fontsize_768);
+  }
+  .intro-glass-container > .my-description-container #description span{
+    font-size: var(--intro_description_fontsize_768);
   }
   .intro-glass-container > .my-description-container #description {
-    font-size: 18px;
+    font-size: var(--intro_description_fontsize_768);
   }
 }

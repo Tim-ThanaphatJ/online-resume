@@ -1,8 +1,8 @@
 import React from "react";
 
 import "../../../App.css";
-import "./IntroBackground.css";
-export const IntroBackground = () => {
+import "./AbstractWhiteVideo.css";
+export const AbstractWhiteVideo = () => {
   return (
     <React.Fragment>
       <video src="/assets/videos/intro-background.mp4" autoPlay loop muted />
