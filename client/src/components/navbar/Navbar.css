@@ -1,5 +1,11 @@
 :root {
-  --nav-button-width: 120px;
+  --nav-button-width: auto;
+  --nav-home-width: 131.6px;
+  --nav-about-width: 131.16px;
+  --nav-skills-width: 114.34px;
+  --nav-exp-width: 170.91px;
+  --nav-work-width: 108.3px;
+  --nav-contact-width: 137.47px;
 }
 
 .navbar {
@@ -14,7 +20,6 @@
   top: 0;
   z-index: 10;
   box-shadow: 0px 12px 25px -12px rgba(0, 0, 0, 0.8);
-  /* 0 10px 10px -2px rgba(0,0,0,.25); */
 }
 
 .navbar-container {
@@ -36,8 +41,7 @@
   align-items: center;
 }
 
-.navbar-logo img
-{
+.navbar-logo img {
   width: 30px;
   height: 30px;
 }
@@ -49,10 +53,10 @@
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(6, auto);
   list-style: none;
   text-align: center;
-  width: 60vw;
+  width: 80vw;
   justify-content: end;
   margin-right: 2rem;
 }
@@ -103,33 +107,37 @@
   width: var(--nav-button-width);
   justify-content: center;
   align-items: center;
+  padding: 0px 25px;
 }
 
 .nav-topics-button-container .nav-menu .animation-button {
   position: absolute;
   height: 5%;
   bottom: 0;
-  width: var(--nav-button-width);
+  width: var(--nav-about-width);
   background-color: white;
-  transition: all 0.5s ease 0.05s;
-}
-
-.nav-topics-button-container .nav-menu .home-nav-button,
-.nav-topics-button-container
-  .nav-menu
-  li:nth-child(1):hover
-  ~ .animation-button {
-  width: var(--nav-button-width);
-  right: calc(var(--nav-button-width) * 3);
+  transition: all 0.5s cubic-bezier(0.45, 0.51, 0.24, 0.95);
+  box-shadow: 0px -1px 15px 2px rgb(255 255 255 / 1.0);
 }
 
 .nav-topics-button-container .nav-menu .about-nav-button,
 .nav-topics-button-container
   .nav-menu
+  li:nth-child(1):hover
+  ~ .animation-button {
+  width: var(--nav-about-width);
+  right: calc(
+    var(--nav-skills-width) + var(--nav-exp-width) + var(--nav-work-width) + var(--nav-contact-width)
+  );
+}
+
+.nav-topics-button-container .nav-menu .skills-nav-button,
+.nav-topics-button-container
+  .nav-menu
   li:nth-child(2):hover
   ~ .animation-button {
-  width: var(--nav-button-width);
-  right: calc(var(--nav-button-width) * 2);
+  width: var(--nav-skills-width);
+  right: calc(var(--nav-exp-width) + var(--nav-work-width) + var(--nav-contact-width));
 }
 
 .nav-topics-button-container .nav-menu .experiences-nav-button,
@@ -137,8 +145,8 @@
   .nav-menu
   li:nth-child(3):hover
   ~ .animation-button {
-  width: var(--nav-button-width);
-  right: calc(var(--nav-button-width) * 1);
+  width: var(--nav-exp-width);
+  right: calc(var(--nav-work-width) + var(--nav-contact-width));
 }
 
 .nav-topics-button-container .nav-menu .work-nav-button,
@@ -146,13 +154,60 @@
   .nav-menu
   li:nth-child(4):hover
   ~ .animation-button {
-  width: var(--nav-button-width);
-  right: calc(var(--nav-button-width) * 0);
+  width: var(--nav-work-width);
+  right: calc(var(--nav-contact-width));
 }
+
+.nav-topics-button-container .nav-menu .contact-nav-button,
+.nav-topics-button-container
+  .nav-menu
+  li:nth-child(5):hover
+  ~ .animation-button {
+  width: var(--nav-contact-width);
+  right: 0;
+}
+
+/* Home */
+/* .nav-topics-button-container .nav-menu .home-nav-button,
+.nav-topics-button-container
+  .nav-menu
+  li:nth-child(1):hover
+  ~ .animation-button {
+  width: var(--nav-home-width);
+  right: calc(
+    var(--nav-about-width) + var(--nav-exp-width) + var(--nav-work-width)
+  );
+}
+
+.nav-topics-button-container .nav-menu .about-nav-button,
+.nav-topics-button-container
+  .nav-menu
+  li:nth-child(2):hover
+  ~ .animation-button {
+  width: var(--nav-about-width);
+  right: calc(var(--nav-exp-width) + var(--nav-work-width));
+}
+
+.nav-topics-button-container .nav-menu .experiences-nav-button,
+.nav-topics-button-container
+  .nav-menu
+  li:nth-child(3):hover
+  ~ .animation-button {
+  width: var(--nav-exp-width);
+  right: calc(var(--nav-work-width));
+}
+
+.nav-topics-button-container .nav-menu .work-nav-button,
+.nav-topics-button-container
+  .nav-menu
+  li:nth-child(4):hover
+  ~ .animation-button {
+  width: var(--nav-work-width);
+  right: 0;
+} */
 
 /* Responsive */
 @media screen and (max-width: 960px) {
-
   .NavbarItems {
     position: relative;
   }
@@ -233,10 +288,10 @@
     transition: 250ms;
   }
 
-  .nav-topics-button-container .nav-menu .animation-button{
+  .nav-topics-button-container .nav-menu .animation-button {
     display: none;
   }
-  .nav-topics-button-container .nav-menu a{
+  .nav-topics-button-container .nav-menu a {
     width: 100%;
     display: flex;
     align-items: center;

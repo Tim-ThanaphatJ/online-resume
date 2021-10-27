@@ -1,7 +1,99 @@
-.main-container {
+
+
+/* h1 */
+.main-container section .content h1 {
+  position: relative;
+  transition: var(--h_transition_duration);
+  transform-origin: left;
+  transform: scaleX(0);
+  font-size: var(--h1_fontsize_fullwidth);
+}
+.main-container section .content h1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  background-color: var(--h1_label_color);
+  transform-origin: right;
+  transition: var(--h_transition_duration);
+}
+
+.main-container section .content h1[data-scroll="in"] {
+  transform: scaleX(1);
+}
+.main-container section .content h1[data-scroll="in"]::before {
+  transform: scaleX(0);
+  transition-delay: var(--h_transition_duration);
+}
+
+/* h2 */
+.main-container section .content h2 {
+  position: relative;
+  transition: var(--h_transition_duration);
+  transform-origin: right;
+  transform: scaleX(0);
+  font-size: var(--h2_fontsize_fullwidth);
+}
+.main-container section .content h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--h2_label_color);
+  transform-origin: left;
+  transition: var(--h_transition_duration);
+}
+
+.main-container section .content h2[data-scroll="in"] {
+  transform: scaleX(1);
+}
+.main-container section .content h2[data-scroll="in"]::before {
+  transform: scaleX(0);
+  transition-delay: var(--h_transition_duration);
+}
+
+/* p */
+.main-container section .content p {
+  text-indent: 7%;
+  transition: var(--content_transition_duration);
+  opacity: 0;
+  font-size: var(--p_fontsize_fullwidth);
+}
+.main-container section .content p[data-scroll="in"] {
+  opacity: 1;
+  transition-delay: var(--content_transition_duration);
+}
+
+/* li */
+.main-container section .content ul {
+  padding-left: 7%;
+}
+.main-container section .content li {
+  transition: var(--content_transition_duration);
+  opacity: 0;
+  font-size: var(--li_fontsize_fullwidth);
+}
+
+.main-container section .content li[data-scroll="in"] {
+  opacity: 1;
+  transition-delay: var(--content_transition_duration);
+}
+
+@media screen and (max-width: 1180px) {
+  .main-container section .content h1 {
+    font-size: var(--h1_fontsize_1180);
+  }
+  .main-container section .content h2 {
+    font-size: var(--h2_fontsize_1180);
+  }
+  .main-container section .content p {
+    font-size: var(--p_fontsize_1180);
+  }
+  .main-container section .content li {
+    font-size: var(--li_fontsize_1180);
+  }
 }

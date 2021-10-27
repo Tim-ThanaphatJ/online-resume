@@ -1,5 +1,5 @@
 // React
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // React Icon
@@ -16,23 +16,33 @@ import "./Navbar.css";
 // Components
 import { LiNavbarData } from "./data/LiNavbarData";
 
+// Scroll Out
+import ScrollOut from "scroll-out";
+
 export const Navbar = () => {
   // State
   const [click, setClick] = useState(false);
+  const [classCurrentPage, setClassCurrentPage] = useState("home-nav-button")
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  // const [button, setButton] = useState(true);
-  // const showButton = () => {
-  //   window.innerWidth <= 960 ? setButton(false) : setButton(true);
-  // };
-  // window.addEventListener("resize", showButton);
-
   // Mount
-  // useEffect(() => {
-  //   showButton();
-  // }, []);
+  useEffect(() => {
+    // Scroll out
+    ScrollOut({
+      threshold: 0.5,
+      targets: ".introduction-page-container, .aboutme-page-container, .skills-page-container",
+
+      /* Triggered when an element is changed */
+      onShown: function (element, ctx, scrollingElement) {
+        if(ctx.element.id === "introduction-page-container") setClassCurrentPage("about-nav-button")
+        else if(ctx.element.id === "aboutme-page-container") setClassCurrentPage("about-nav-button")
+        else if(ctx.element.id === "skills-page-container") setClassCurrentPage("skills-nav-button")
+        
+      },
+    });
+  }, []);
 
   // Render Navbar Logo
   const renderNavLogo = () => {
@@ -73,16 +83,16 @@ export const Navbar = () => {
                     className="nav-links"
                     onClick={closeMobileMenu}
                   >
-                    {item.name === "Home" && (
+                    {item.name === "About" && (
                       <AiIcon.AiFillHome></AiIcon.AiFillHome>
                     )}
-                    {"\u00A0"}
+                    {"\u00A0"}{"\u00A0"}
                     {item.name}
                   </a>
                 </li>
               );
             })}
-            <li className="animation-button home-nav-button"></li>
+            <li className={`animation-button ${classCurrentPage}`}></li>
           </ul>
         </div>
       </React.Fragment>

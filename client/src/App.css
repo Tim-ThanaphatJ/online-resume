@@ -26,6 +26,7 @@
   --h2_label_color: #4f4f4f;
   --h_transition_duration: 0.5s;
   --content_transition_duration: 1s;
+  --about_img_transition_duration: 3.5s;
 
   /* h1 */
   --h1_fontsize_fullwidth: 3em;

@@ -30,6 +30,10 @@ export const IntroductionCard = () => {
 
   useEffect(() => {});
 
+  const handleOnClickLink = () => {
+    window.location.href = "#aboutme-page-container";
+  };
+
   return (
     <React.Fragment>
       <div className="intro-glass-container">
@@ -61,7 +65,9 @@ export const IntroductionCard = () => {
                 {IntroductionData.descriptions.map((data, index) => {
                   if (data.cName)
                     return (
-                      <span key={index} className={data.cName}>{data.description}</span>
+                      <span key={index} className={data.cName}>
+                        {data.description}
+                      </span>
                     );
                   else {
                     return <span key={index}>{data.description}</span>;
@@ -75,13 +81,13 @@ export const IntroductionCard = () => {
               typingDoneSecond ? "intro-underly active" : "intro-underly"
             }
           ></div>
-          
+
           {typingDoneSecond ? (
             <Button
               className="btns"
               buttonStyle="btn--outline"
               buttonSize="btn--large"
-              onClick={console.log("hey")}
+              onClick={handleOnClickLink}
             >
               <Typed
                 strings={[" ABOUT-ME "]}

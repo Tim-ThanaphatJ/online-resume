@@ -1,0 +1,8 @@
+.skills-page-container{
+    width: 80%;
+    height: calc(100vh - var(--navbar_height));
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    padding: 50px 0px;
+}

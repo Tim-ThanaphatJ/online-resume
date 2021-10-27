@@ -1,5 +1,5 @@
 // React
-import React, { useEffect } from "react";
+import React from "react";
 
 // Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -11,17 +11,7 @@ import Main from "./components/pages/main/Main";
 // CSS
 import "./App.css";
 
-// Scroll Out
-import ScrollOut from "scroll-out";
-
 function App() {
-
-  // Mount
-  useEffect(() => {
-    ScrollOut({
-      targets: "h1, h2, p, li",
-    });
-  }, []);
 
   return (
     <React.Fragment>

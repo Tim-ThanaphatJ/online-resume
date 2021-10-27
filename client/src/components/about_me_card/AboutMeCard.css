@@ -20,7 +20,7 @@
 }
 
 /* h1 */
-.about-me-description-container section .content h1 {
+/* .about-me-description-container section .content h1 {
   position: relative;
   transition: var(--h_transition_duration);
   transform-origin: left;
@@ -45,10 +45,10 @@
 .about-me-description-container section .content h1[data-scroll="in"]::before {
   transform: scaleX(0);
   transition-delay: var(--h_transition_duration);
-}
+} */
 
 /* h2 */
-.about-me-description-container section .content h2 {
+/* .about-me-description-container section .content h2 {
   position: relative;
   transition: var(--h_transition_duration);
   transform-origin: right;
@@ -73,10 +73,10 @@
 .about-me-description-container section .content h2[data-scroll="in"]::before {
   transform: scaleX(0);
   transition-delay: var(--h_transition_duration);
-}
+} */
 
 /* p */
-.about-me-description-container section .content p {
+/* .about-me-description-container section .content p {
   text-indent: 7%;
   transition: var(--content_transition_duration);
   opacity: 0;
@@ -85,10 +85,10 @@
 .about-me-description-container section .content p[data-scroll="in"] {
   opacity: 1;
   transition-delay: var(--content_transition_duration);
-}
+} */
 
 /* li */
-.about-me-description-container section .content ul {
+/* .about-me-description-container section .content ul {
   padding-left: 7%;
 }
 .about-me-description-container section .content li {
@@ -100,6 +100,17 @@
 .about-me-description-container section .content li[data-scroll="in"] {
   opacity: 1;
   transition-delay: var(--content_transition_duration);
+} */
+
+.about-me-image-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+.about-me-image-container img[data-scroll="in"]{
+  transition: var(--about_img_transition_duration);
+  opacity: 1;
 }
 
 @media screen and (max-width: 1180px) {
@@ -109,7 +120,7 @@
   .about-me-description-container {
       width: 100%;
   }
-  .about-me-description-container section .content h1 {
+  /* .about-me-description-container section .content h1 {
     font-size: var(--h1_fontsize_1180);
   }
   .about-me-description-container section .content h2 {
@@ -120,5 +131,5 @@
   }
   .about-me-description-container section .content li {
     font-size: var(--li_fontsize_1180);
-  }
+  } */
 }
