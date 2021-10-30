@@ -1,5 +1,5 @@
 // React
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 // CSS
 import "./IntroductionCard.css";
@@ -28,8 +28,6 @@ export const IntroductionCard = () => {
   const [typingDoneFirst, setTypingDoneFirst] = useState(false);
   const [typingDoneSecond, setTypingDoneSecond] = useState(false);
 
-  useEffect(() => {});
-
   const handleOnClickLink = () => {
     window.location.href = "#aboutme-page-container";
   };
@@ -49,9 +47,9 @@ export const IntroductionCard = () => {
             avgTypingDelay={nameTypistSpeedInterval}
             onTypingDone={() => setTypingDoneFirst(true)}
           >
-            {IntroductionData.greeting}
+            <h3 id="greeting">{IntroductionData.greeting}</h3>
             <br />
-            {IntroductionData.name}
+            <h1 id="my-name">{IntroductionData.name}</h1>
             <br />
           </Typist>
 

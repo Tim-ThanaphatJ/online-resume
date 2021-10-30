@@ -13,6 +13,7 @@ const AboutMeCard = () => {
   // Mount
   useEffect(() => {
     ScrollOut({
+      threshold: 0.30,
       targets:
         ".about-me-description-container h1, .about-me-description-container h2, .about-me-description-container p, .about-me-description-container li, .about-me-image-container img",
     });

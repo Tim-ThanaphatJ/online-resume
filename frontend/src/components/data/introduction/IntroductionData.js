@@ -1,6 +1,6 @@
 export const IntroductionData = {
-  greeting: <h3 id="greeting">Hi, my name is</h3>,
-  name: <h1 id="my-name">" Tim Thanaphat "</h1>,
+  greeting: "Hi, my name is",
+  name: " Tim Thanaphat ",
   descriptions: [
     {
       cName: "description-capital",

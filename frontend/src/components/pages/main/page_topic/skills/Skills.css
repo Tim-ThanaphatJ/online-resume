@@ -1,0 +1,21 @@
+.skills-page-container{
+    width: 100%;
+    height: calc(100vh - var(--navbar_height));
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px 80px;
+}
+
+@media screen and (max-width: 1180px) {
+    .skills-page-container{
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .skills-page-container{
+        height: auto;
+    }
+}
